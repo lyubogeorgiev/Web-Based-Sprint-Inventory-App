@@ -14,12 +14,14 @@
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
-    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <label for="name">Product Name: </label>
+    <p><input type="text" id="name" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
 
-    <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+    <label for="price">Product Price: </label>
+    <p><input type="text" id="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
 
-
-    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <label for="inv">Inventory: </label>
+    <p><input type="text" id="inv" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
 
     <p>
     <div th:if="${#fields.hasAnyErrors()}">

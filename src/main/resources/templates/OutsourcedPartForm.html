@@ -14,15 +14,19 @@
 <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
-<p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+<label for="name">Part Name: </label>
+<p><input type="text" id="name" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
 
-<p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+<label for="price">Part Price: </label>
+<p><input type="text" id="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
 
-<p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+<label for="inv">Inventory: </label>
+<p><input type="text" id="inv" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
-    <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
+<label for="companyName">Company Name: </label>
+<p><input type="text" id="companyName" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 
 <p><input type="submit" value="Submit" /></p>
 </form>
