@@ -112,6 +112,22 @@ public class AddProductController {
         return "productForm";
     }
 
+    @GetMapping("/buyProduct")
+    public String buyProduct(@RequestParam("productID") int theId, Model theModel) {
+        ProductService productService = context.getBean(ProductServiceImpl.class);
+        Product product3 = productService.findById(theId);
+
+        if (product3.getInv() <= 0) {
+            return "purchasefailed";
+        }
+        product3.setInv(product3.getInv() - 1);
+        productService.save(product3);
+
+        theModel.addAttribute("productName", product3.getName());
+
+        return "purchasesuccess";
+    }
+
     @GetMapping("/deleteproduct")
     public String deleteProduct(@RequestParam("productID") int theId, Model theModel) {
         ProductService productService = context.getBean(ProductServiceImpl.class);
