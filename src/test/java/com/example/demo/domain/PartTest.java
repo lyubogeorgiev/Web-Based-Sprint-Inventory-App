@@ -37,6 +37,24 @@ class PartTest {
     }
 
     @Test
+    void setMaxInventory() {
+        int maxInv = 20;
+        partIn.setMaxInventory(maxInv);
+        assertEquals(partIn.getMaxInventory(), maxInv);
+        partOut.setMaxInventory(maxInv);
+        assertEquals(partOut.getMaxInventory(), maxInv);
+    }
+
+    @Test
+    void setMinInventory() {
+        int minInv = 2;
+        partIn.setMinInventory(minInv);
+        assertEquals(partIn.getMinInventory(), minInv);
+        partOut.setMinInventory(minInv);
+        assertEquals(partOut.getMinInventory(), minInv);
+    }
+
+    @Test
     void setId() {
         Long idValue=4L;
         partIn.setId(idValue);
