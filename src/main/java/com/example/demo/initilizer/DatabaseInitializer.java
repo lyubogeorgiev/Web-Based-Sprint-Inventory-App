@@ -35,6 +35,7 @@ public class DatabaseInitializer {
             double[] prices = {1199.99, 699.99, 499.99, 199.99, 179.99};
             int[] inventories = {1, 2, 2, 4, 1};
             long[] ids = {1, 2, 3, 4, 5};
+            int[][] maxMinInv = {{1, 10}, {2, 12}, {2, 10}, {1, 10}, {3, 15}};
 
             Set<Part> inhousePartsSet = new HashSet<>();
 
@@ -44,6 +45,8 @@ public class DatabaseInitializer {
                 part.setPrice(prices[i]);
                 part.setInv(inventories[i]);
                 part.setId(ids[i]);
+                part.setMinInventory(maxMinInv[i][0]);
+                part.setMaxInventory(maxMinInv[i][1]);
 
                 inhousePartsSet.add(part);
 
