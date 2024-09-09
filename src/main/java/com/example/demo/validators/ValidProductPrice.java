@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = {PriceProductValidator.class})
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidProductPrice {
+public @interface qValidProductPrice {
     String message() default "Price of the product must be greater than the sum of the price of the parts.";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
